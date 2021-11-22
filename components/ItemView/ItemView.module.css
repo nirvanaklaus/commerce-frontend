@@ -1,0 +1,16 @@
+.card_media_image {
+  height: 150px;
+  background-size: contain !important;
+  margin-bottom: 20px;
+}
+.item_view_card {
+  padding: 10px;
+  min-width: 300px;
+  max-width: 350px;
+  width: 45%;
+  margin: auto;
+  cursor: pointer;
+}
+@media screen and (max-width: 424px) {
+  
+}
