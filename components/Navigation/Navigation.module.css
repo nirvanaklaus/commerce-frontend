@@ -1,0 +1,17 @@
+.navigation {
+    width: 100%;
+    background: blueviolet;
+}
+.navigation__top-section{
+
+}
+.navigation__bottom-section{
+
+}
+.navigation__link-list{
+    display:flex;
+    flex-direction: column;
+}
+.navigation__link-list a{
+    width: fit-content;
+}

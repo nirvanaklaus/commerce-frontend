@@ -6,7 +6,7 @@ export const addItemToCart = (cartItems, cartItemToAdd, add = false) => {
   if (existingCartItem) {
     if (add) {
     } else {
-      console.log("object already exists");
+      // console.log("object already exists");
       return cartItems;
     }
   }
