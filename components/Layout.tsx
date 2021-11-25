@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation/Navigation";
 import Cart from "./CartView/CartView";
 import ContextProvider from "../context";
+import SideBar from "./Navigation/SideBar/SideBar";
 
 const Layout: React.FC = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
@@ -18,6 +19,7 @@ const Layout: React.FC = ({ children }) => {
     // }
     {}
   );
+  const [sidebarIsOpen, setSideBarIsOpen] = useState(false);
   useEffect(() => {
     if (
       JSON.parse(localStorage.getItem("007-tasche") ?? "[]") &&
@@ -51,7 +53,8 @@ const Layout: React.FC = ({ children }) => {
         // authModalContextValue={{ authModalOpen, setAuthModalOpen }}
         // authContextValue={{ authState, authDispatch }}
       >
-        <Navigation showCartView={showCartView} />
+        <Navigation showSideBar={setSideBarIsOpen} showCartView={showCartView} />
+        <SideBar showSideBar={setSideBarIsOpen} isOpen={sidebarIsOpen} />
         <Cart open={showCart} handleCartClose={handleCartClose} />
         <div className="Content">{children}</div>
       </ContextProvider>

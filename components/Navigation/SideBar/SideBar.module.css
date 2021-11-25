@@ -1,0 +1,35 @@
+.sidebar {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  transition: 0.5s ease-in;
+  /* display: block; */
+}
+.sidebar--inactive {
+    position: absolute;
+  width: 0%;
+  transition: 0.5s ease-in-out;
+  /* display: none; */
+}
+.sidebar--inactive .sidebar__link-list--inactive {
+  /* display: none; */
+  width: 0%;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+}
+.sidebar .sidebar__link-list--active {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  max-width: 450px;
+  background: white;
+  transition: 0.5s ease-in-out;
+}
+.sidebar .sidebar__link-list a {
+  width: fit-content;
+}
+.sidebar_activate .sidebar__link-list {
+  width: 150px;
+}

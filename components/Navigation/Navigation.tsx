@@ -1,29 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SearchBar from "./SearchBar/SearchBar";
-import { FavoriteOutlined, ShoppingCart } from "@material-ui/icons";
+import { FavoriteOutlined, ShoppingCart, Menu } from "@material-ui/icons";
 import { Button } from "@material-ui/core";
 import styles from "./Navigation.module.css";
+import { linkSync } from "fs";
 
-interface NavigationProps {
+export interface NavigationProps {
   showCartView(): void;
+  showSideBar(value: boolean): void;
 }
+interface linkStructure {
+  text: string;
+  address: string;
+}
+export const links: linkStructure[] = [
+  { text: "Latest Releases", address: "/latest" },
+  { text: "Tops", address: "/tops" },
+  { text: "Bottoms", address: "/bottoms" },
+  { text: "Footwear", address: "/footwear" },
+];
 
-const Navigation: React.FC<NavigationProps> = ({ showCartView }) => {
-  interface linkStructure {
-    text: string;
-    address: string;
-  }
-  const links: linkStructure[] = [
-    { text: "Latest Releases", address: "/latest" },
-    { text: "Tops", address: "/tops" },
-    { text: "Bottoms", address: "/bottoms" },
-    { text: "Footwear", address: "/footwear" },
-  ];
+const Navigation: React.FC<NavigationProps> = ({
+  showCartView,
+  showSideBar,
+}) => {
   return (
     <div className={styles.navigation} style={{ width: "100%" }}>
-        {/* top of the navigation bar (desktop and mobile) */}
+      {/* top of the navigation bar (desktop and mobile) */}
       <section className={styles["navigation__top-section"]}>
         <section>
           <Image
@@ -48,23 +53,7 @@ const Navigation: React.FC<NavigationProps> = ({ showCartView }) => {
           <Button color="primary" onClick={showCartView}>
             <ShoppingCart></ShoppingCart> Cart
           </Button>
-        </section>
-      </section>
-      {/* bottom of the navigation bar (mobile dropdown, practically) */}
-      <section className={styles["navigation__bottom-section"]}>
-        <section className={styles["navigation__link-list"]}>
-          {links.map(({ text, address }, index) => (
-            <Link key={Math.random() + index} href={address}>
-              <a>{text}</a>
-            </Link>
-          ))}
-        </section>
-        <section>
-          <SearchBar />
-          <FavoriteOutlined />
-          <Button color="primary" onClick={showCartView}>
-            <ShoppingCart></ShoppingCart> Cart
-          </Button>
+            <Menu onClick={() => showSideBar(true)}></Menu>
         </section>
       </section>
     </div>
