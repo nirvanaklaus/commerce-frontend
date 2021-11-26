@@ -4,7 +4,7 @@ import styles from "./SearchBar.module.css";
 
 const SearchBar: React.FC = () => {
   return (
-    <div className={styles["searchbar"]}>
+    <div className={`${styles["searchbar"]}`}>
       <Search className={styles["searchbar__icon"]} />
       <input
         type="search"

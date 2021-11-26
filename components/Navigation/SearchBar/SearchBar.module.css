@@ -16,12 +16,12 @@
   padding: 10px 10px 10px 30px;
   border-radius: 25px;
   border: 1px solid black;
-  background-color: rgba(106, 109, 112, 0.4);
+  background-color: rgb(255, 255, 255);
   font-size: 0.9rem;
   /* color: white; */
 }
 .searchbar__input::placeholder {
-    color: rgb(227, 234, 238);
+    /* color: rgb(227, 234, 238); */
 }
 .searchbar__input::-webkit-search-cancel-button {
     margin-left: 5px;

@@ -13,14 +13,15 @@ export class ItemView extends React.Component<IItemView> {
   }
   render() {
     return (
-      <div className={styles.item_view_card}>
-        <Card onClick={this.onItemClicked}>
-          <CardHeader title={this.props.name} subheader={this.props.type} />
-          <CardMedia
-            className={styles.card_media_image}
-            image={this.props.images[0]}
-          />
-        </Card>
+      <div onClick={this.onItemClicked} className={styles.item_view_card}>
+        <CardMedia
+          className={styles.card_media_image}
+          image={this.props.images[0]}
+        />
+        <h3>{this.props.name}</h3>
+        <small>{this.props.type}</small>
+
+        <h6>₦{this.props.specs?.price}</h6>
       </div>
     );
   }

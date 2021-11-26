@@ -1,16 +1,72 @@
 html,
 body {
   padding: 0;
-  margin: 0;
+  /* margin: 0; */
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  max-width: 1920px;
+  margin: 0px auto;
+  /* overflow-y:auto; */
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
+@media screen and (max-width: 1500px) {
+  .smaller_pc {
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1501px) and (max-width: 1754px) {
+  .large_pc {
+    max-width: 1400px;
+    margin: auto;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1755px) and (max-width: 1920px) {
+  .larger_pc{
+    max-width: 1600px;
+    margin: auto;
+    width: 100%;
+  }
+}
 
 * {
   box-sizing: border-box;
 }
+@media screen and (max-width: 1023px) {
+  .pc_only {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .mobile_only,
+  .table_only,
+  .mobile_and_tablet_only {
+    display: none !important;
+  }
+}
+/* @media screen and (max-width:600px) {
+.tablet_only,.pc_only{
+  display: none;
+}  
+}
+@media screen and (min-width:601px) and (max-width:1023px) {
+  .pc_only,.mobile_only{
+    display: none;
+  }  
+}
+
+.mobile_only {
+}
+.mobile_and_tablet_only {
+}
+.tablet_only {
+}
+.pc_only {
+} */

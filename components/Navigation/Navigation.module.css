@@ -1,13 +1,25 @@
 .navigation {
-    width: 100%;
-    background: blueviolet;
+  width: 100%;
+  background: blueviolet;
 }
-.navigation__top-section{
-
+.navigation__top-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0% 2%;
 }
-.navigation__top-section img{
-    border-radius: 25%;
+.navigation__top-section section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 40%;
 }
-.navigation__bottom-section{
-
+.navigation__top-section section a {
+font-size: 1rem;
+}
+.navigation__top-section img {
+  border-radius: 25%;
+}
+.navigation__bottom-section {
+}
+.navigation .mobile {
 }

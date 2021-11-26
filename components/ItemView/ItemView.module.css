@@ -1,16 +1,33 @@
 .card_media_image {
   height: 150px;
   background-size: contain !important;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+  background: rgb(115, 75, 109);
 }
 .item_view_card {
-  padding: 10px;
-  min-width: 300px;
+  /* padding: 10px; */
+  min-width: 150px;
   max-width: 350px;
-  width: 45%;
-  margin: auto;
+  width: 40%;
+  margin: 25px auto;
   cursor: pointer;
 }
+.item_view_card h3 {
+  font-size: 16px;
+  margin: 10px 0px 0px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 500;
+}
+.item_view_card h6 {
+  font-size: 0.8rem;
+  margin: 10px 0px 0px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 500;
+}
+.item_view_card small {
+  font-size: 0.8rem;
+  color: #757575;
+  margin: 0;
+}
 @media screen and (max-width: 424px) {
-  
 }

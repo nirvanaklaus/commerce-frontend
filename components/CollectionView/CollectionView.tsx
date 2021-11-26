@@ -23,9 +23,14 @@ export class CollectionView extends React.Component<Collection> {
       );
     });
     return (
-      <Box display={"flex"} flexWrap={"wrap"}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+        }}
+      > 
         {items}
-      </Box>
+      </div>
     );
   }
 }
