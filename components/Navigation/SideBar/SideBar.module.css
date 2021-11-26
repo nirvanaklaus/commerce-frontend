@@ -38,6 +38,8 @@
 .sidebar .sidebar__link-list--active svg {
   position: absolute;
   right: 10px;
+  background: white;
+  border-radius: 50%;
 }
 .sidebar .sidebar__link-list--active a {
   width: fit-content;
