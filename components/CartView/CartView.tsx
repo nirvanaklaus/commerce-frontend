@@ -98,7 +98,7 @@ const Cart: React.FC<ICartProps> = ({ open, handleCartClose }) => {
           <SummaryDiv>
             <Summary shipping={0} subTotal={Number(cart.cartTotal())} discount={0} />
             <br />
-            <Link passHref href="/checkout-page">
+            <Link passHref href="/checkout_page">
               <Button color="primary">Proceed to Checkout</Button>
             </Link>
           </SummaryDiv>
