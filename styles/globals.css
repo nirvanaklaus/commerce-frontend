@@ -8,8 +8,23 @@ body {
   margin: 0px auto;
   /* overflow-y:auto; */
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  font-family: "Inter", Helvetica, sans-serif !important;
+}
+p,
+strong,
+button,
+small {
+  font-family: "Source Sans Pro", sans-serif !important;
+}
 a {
+  font-family: "Source Sans Pro", sans-serif;
   color: inherit;
   text-decoration: none;
 }
@@ -29,7 +44,7 @@ a {
   }
 }
 @media screen and (min-width: 1755px) and (max-width: 1920px) {
-  .larger_pc{
+  .larger_pc {
     max-width: 1600px;
     margin: auto;
     width: 100%;

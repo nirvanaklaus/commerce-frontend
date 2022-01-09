@@ -2,6 +2,7 @@ import { Button } from "@material-ui/core";
 import React, { useContext, useEffect } from "react";
 import CartContext from "../../../../context/CartContext";
 import { IProduct } from "../../../../data/products";
+import styled from 'styled-components'
 
 export interface IDetailsPanel {
   name: string;
@@ -13,6 +14,27 @@ export interface IDetailsPanel {
   product: IProduct | null;
 }
 
+const PanelDiv = styled.div`
+max-width:450px;
+width:100%;
+button{
+  background:blueviolet;
+  color:white;
+  margin-right: 30px;
+}
+button:hover{
+  color:blueviolet
+}
+`
+
+const Select = styled.select`
+max-width: 300px;
+width: 80%;
+background: rgba(0,0,0,0.03);
+margin: 15px 0px;
+`
+
+
 const DetailsPanel: React.FC<IDetailsPanel> = ({ ...product }) => {
   const { name, type, specs, longDescription } = product?.product ?? {};
   const { sizes, colour, price } = specs ?? {};
@@ -21,18 +43,19 @@ const DetailsPanel: React.FC<IDetailsPanel> = ({ ...product }) => {
   // }, [type, longDescription, name, price]);
   const cart = useContext(CartContext);
   return (
-    <div>
+    <PanelDiv>
       <h3>{name}</h3>
       <p>{type}</p>
       <strong>{price}</strong>
       <p>COLOUR: {colour}</p>
-      <select name="sizes" id="sizes">
+      <span>SIZE: </span><br />
+      <Select name="sizes" id="sizes">
         {sizes?.map((size) => (
           <option key={`${Math.random()}-${size}`} value={size}>
             {size}
           </option>
         ))}
-      </select>
+      </Select>
       <section>
         <Button
           color="primary"
@@ -43,7 +66,7 @@ const DetailsPanel: React.FC<IDetailsPanel> = ({ ...product }) => {
         <Button color="primary">Add To Wishlist</Button>
       </section>
       <p>{longDescription}</p>
-    </div>
+    </PanelDiv>
   );
 };
 
