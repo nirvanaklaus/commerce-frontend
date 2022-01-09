@@ -1,5 +1,5 @@
 .card_media_image {
-  height: 150px;
+  min-height: 150px;
   background-size: contain !important;
   /* margin-bottom: 20px; */
   background: rgb(115, 75, 109);
@@ -7,7 +7,7 @@
 .item_view_card {
   /* padding: 10px; */
   min-width: 150px;
-  max-width: 350px;
+  max-width: 300px;
   width: 40%;
   margin: 25px auto;
   cursor: pointer;
@@ -28,6 +28,11 @@
   font-size: 0.8rem;
   color: #757575;
   margin: 0;
+}
+@media screen and (min-width: 1024px) {
+  .card_media_image {
+    min-height: 400px;
+  }
 }
 @media screen and (max-width: 424px) {
 }

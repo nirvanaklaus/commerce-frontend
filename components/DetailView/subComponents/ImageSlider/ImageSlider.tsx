@@ -1,7 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import styled from 'styled-components'
 
 export interface IImageSliderProps {
   imageURL: string[];
@@ -17,16 +18,31 @@ const ImageSlider: React.FC<IImageSliderProps> = ({ imageURL, width, height }) =
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
+  const SliderDiv = styled.div`
+  button{
+    background:black;
+    border-radius:50%;
+    padding:2px;
+  }
+  button:hover{
+    background:black;
+  }
+  button:focus{
+    background:black;
+
+  }
+  `
   return (
-    <div style={{width:"550px"}}>
+    <SliderDiv style={{ maxWidth: "550px" }}>
       <Slider {...settings}>
         {imageURL.map((item: string) => (
           <div key={item}>
-            <img src={item} alt="" width={width??450} height={height??350} />
+            <img src={item} alt="" width={width ?? 450} height={height ?? 350} />
           </div>
         ))}
       </Slider>
-    </div>
+    </SliderDiv>
   );
 };
 
